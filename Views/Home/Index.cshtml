@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<br />
+<div class="bg-success">
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "submitForm", @class = "form-horizontal" }))
+    {
+        <br />
+        @Html.AntiForgeryToken()
+        <label>success</label>
+        <input id="mesaj" name="mesaj" type="text" />
+        <input id="Submit1" type="submit" value="submit" />
+        <br />
+    }
+</div>
+
+
+<br />
+<div class="bg-danger">
+    @using (Html.BeginForm("IndexError", "Home", FormMethod.Post, new { id = "submitForm", @class = "form-horizontal" }))
+    {
+        <br />
+        @Html.AntiForgeryToken()
+        <label>error</label>
+        <input id="mesaj" name="mesaj" type="text" />
+        <input id="Submit1" type="submit" value="submit" />
+        <br />
+    }
+</div>
+
+<br />
+<div class="bg-warning">
+    @using (Html.BeginForm("IndexWarning", "Home", FormMethod.Post, new { id = "submitForm", @class = "form-horizontal" }))
+    {
+        <br />
+        @Html.AntiForgeryToken()
+        <label>warning</label>
+        <input id="mesaj" name="mesaj" type="text" />
+        <input id="Submit1" type="submit" value="submit" />
+        <br />
+    }
+</div>
+
+<br />
+<div class="bg-info">
+    @using (Html.BeginForm("IndexInfo", "Home", FormMethod.Post, new { id = "submitForm", @class = "form-horizontal" }))
+    {
+        <br />
+        @Html.AntiForgeryToken()
+        <label>info</label>
+        <input id="mesaj" name="mesaj" type="text" />
+        <input id="Submit1" type="submit" value="submit" />
+        <br />
+    }
+</div>
+
+
+@section scripts{
+    <script type="text/javascript">
+        @Html.Raw(ViewBag.SweetAlertShowMessage)
+    </script>
+}
